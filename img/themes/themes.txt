@@ -1,0 +1,17 @@
+
+[	0  body background-image, 
+	1  body color, 
+	2  .btn background-color, 
+	3  .btn box-shadow, 
+	4  .btn color,
+ 	5  .name-input background, 
+	6  .name-input border, 
+	7  .card-face box-shadow, 
+ 	8  .card-face-back background-image, 
+	9  .card-face-back background-color,
+ 	10 .card-face-back background-blend-mode, 
+	11 .card-face-front background-image,
+ 	12 .modal background-image, 
+	13 .gamefinished background
+	14 .play-reset-button-container box-shadow
+	]
