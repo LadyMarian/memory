@@ -1,0 +1,445 @@
+body {
+	background-image: url(../img/themes/rainbow/background.png);
+	background-size: 100%;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+}
+
+:root {
+	--ff-title: 'Coiny', cursive;
+	--clr-rainbow-h: black;
+	--clr-rainbow-p: black;
+	--clr-industrial-h: rgb(191, 226, 252);
+	--clr-industrial-p: rgb(74.9, 88.6, 98.8);
+}
+
+h1 {
+	font-family: var(--ff-title);
+	margin: 2rem 2rem 1rem;
+	text-align: center;
+}
+
+p {
+	text-align: center;
+	margin: 0 auto 2rem;
+	font-family: var(--ff-title);
+}
+
+.btn {
+	font-family: var(--ff-title);
+	font-size: .7rem;
+	margin: 1em 1.5em 1em;
+	padding: 1em 1em;
+	background-color: rgba(255,255,128,0.6);
+	border: none;
+	border-radius: 10px;
+	box-shadow: 2px 2px 10px 8px rgba(0,0,0,.5);
+	color: var(--clr-rainbow-p);
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+.resetbutton,
+.playbutton,
+.settingsbutton,
+.backbutton,
+.closebutton,
+.backbuttonthemepage,
+.hamburgerbutton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	margin: .5rem;
+}
+
+.resetbutton img,
+.playbutton img,
+.settingsbutton img, 
+.backbutton img,
+.closebutton img,
+.backbuttonthemepage img,
+.hamburgerbutton img {
+	width: 100%;
+}
+
+.playbutton {
+	margin: 1rem auto;
+}
+
+.hamburgerbutton {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	border-radius: 0;
+	border-bottom-left-radius: 15px
+}
+
+.reset-play-button-container {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-image: url(../img/themes/rainbow/background.png);
+	background-size: 100%;
+	padding: 2rem;
+	border-bottom-left-radius: 25px;
+	box-shadow: 2px 2px 10px 32px rgba(0,0,0,.5);
+}
+.reset-play-button-container div {
+	display: flex;
+	justify-content: center;
+}
+
+.backbuttonthemepage {
+	margin: 1rem auto;
+}
+
+.input-player-names {
+	display: flex;
+	flex-direction: column;
+}
+
+.name-input {
+	font-family: var(--ff-title);
+	background: rgba(258,258,258,.5);
+	font-size: 1.15rem;
+	border: 2px solid gray;
+	border-radius: 10px; 
+	text-align: center; 
+	padding: .5em;
+	margin: .5em auto;
+	display: none;
+}
+
+.btn-pickamount {
+	width: 75px;
+	height: 75px;
+}
+
+.btn-pickamount img {
+	width: 100%;
+	max-height: 100%;
+}
+
+.btn-pickcards,
+.btn-pickplayers {
+	padding: .75rem;
+	width: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.btn-pickcards-img {
+	width: 75%;
+}
+
+.btn-pickcards p {
+	margin: 0 auto;
+}
+
+.playerbuttons,
+.cards-grid,
+.amountbuttons,
+.rainbowbuttons,
+.pickbuttons,
+.gamefinished,
+.themebuttons {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0;
+	padding: 0 2rem;
+	max-width: 1100px;
+}
+
+@media (min-width: 900px) {
+	.playerbuttons,
+	.cards-grid,
+	.amountbuttons,
+	.pickbuttons,
+	.rainbowbuttons,
+	.gamefinished,
+	.themebuttons {
+		margin: 0 auto;
+	}
+}
+
+#memory-grid {
+	display: none;
+}
+
+#playerNames {
+	display: none;
+}
+
+#pickamount {
+	display: none;
+}
+
+#pickbuttons {
+	display: none;
+}
+
+#rainbowcategories {
+	display: none;
+}
+
+.playerscores {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 2rem;
+}
+
+.playerscorecard {
+	display: none;
+	font-family: var(--ff-title);
+	font-size: .8rem;
+	margin: 1em 1.5em 1em;
+	padding: 1em 1em;
+	background: rgba(255,194,128,0.7);
+	border: none;
+	border-radius: 10px;
+	box-shadow: 2px 2px 10px 8px rgba(0,0,0,.5);
+	color: black;
+}
+
+.playerscorecard-currentplayer {
+	background: rgba(165,227,114,0.9);
+	border: 3px solid rgba(109, 196, 39, 1);
+	box-shadow: 2px 2px 10px 15px rgba(165,227,114);
+}
+
+.playerscorecard p {
+	margin-bottom: 0;
+}
+
+.playerpoints {
+	font-size: 1.25rem;
+}
+
+.memory-grid {
+	display: flex;
+}
+
+.card-container {
+	display: none;
+	justify-content: center;
+	margin: 1rem;
+}
+
+.scene {
+	width: 75px;
+	height: 75px;
+	perspective: 450px;
+}
+
+.card {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transition: transform 1s;
+	transform-style: preserve-3d;
+}
+
+.card-face {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	backface-visibility: hidden;
+	border-radius: 20px;
+	box-shadow: 2px 2px 10px 8px rgba(0,0,0,.5);
+}
+
+.card-face-back {
+	background-image: url(../img/themes/rainbow/cardback.jpg);
+	background-color: rgba(258,258,258,.5);
+	background-blend-mode: color-burn;
+	background-size: cover;
+}
+
+.card-face-front{
+	background-image: url(../img/themes/rainbow/cardfront.jpg);
+	background-size: cover;
+	transform: rotateY(180deg);
+	display: flex;
+}
+
+.is-flipped {
+	transform: rotateY(180deg);
+}
+
+.card-picture {
+	width: 70%;
+	margin: auto;
+	object-fit: cover;
+}
+
+#gamefinished {
+	display: none;
+}
+
+#gamefinishedmultiplayer {
+	display: none;
+}
+
+.modal {
+	background-color: rgba(0,0,0,.3);
+	background-image: url(../img/themes/rainbow/endscreen.jpg);
+	background-blend-mode: overlay;
+	background-size: 100%;
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+	width: 100vw;
+}
+
+.gamefinished {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-family: var(--ff-title);
+	margin: auto;
+	padding: 0 1.5rem 1.5rem;
+	background-color: rgba(225,225,128,.7);
+	border-radius: 40px;
+}
+
+.gamefinished .resetbutton {
+	margin: 1rem auto;
+}
+
+.gamefinished h2 {
+	text-align: center;
+}
+
+#settings {
+	position: absolute;
+	z-index: 2;
+	display: none;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/themes/rainbow/background.png);
+	background-color: rgba(0,0,0,.4);
+	background-blend-mode: overlay;
+	background-size: 100%;
+}
+
+.settings {
+	background-image: url(../img/themes/rainbow/background.png);
+	background-size: 100%;
+	border-radius: 40px;
+	width: 80%;
+	height: 80%;
+	margin: auto;
+	box-shadow: 2px 2px 10px 8px rgba(0,0,0,.5);
+}
+
+@media (max-width: 369px) {
+	.settings {
+		min-width: 100%;
+		min-height: 100vh;
+		border-radius: 0px;
+		margin: 0;
+	}
+}
+
+
+@media (max-width: 495px) {
+	.settings h1 {
+		font-size: 1.25rem;
+	}
+	.settings. themebutton {
+		width: 50px;
+	}
+	.settings {
+		width: 90%;
+		height: 90%;
+	}
+}
+
+@media (max-width: 899px) {
+	.settings .themebutton {
+		width: 75px;
+		
+	}
+	.themebutton .btn-pickcards-img {
+		max-width: 75%;
+	}
+}
+
+
+@media (max-height: 530px) {
+/*
+	.settings .themebutton {
+		width: 50px;
+	}
+*/
+	.settings {
+		width: 90%;
+		height: 90%;
+	}
+}
+
+@media (max-device-width: 600px) 
+    and (orientation: portrait) { 
+		h1 {
+			font-size: 4rem; 
+			margin-bottom: 2.5rem;
+		}
+		.btn-pickplayers {
+			width: 150px;
+		}
+		.btn-pickcards-img {
+			width: 100%;
+		}
+		.input-player-names {
+			margin-bottom: 2rem;
+		}
+		.name-input {
+			font-size: 2.15rem;
+			margin: .5em auto;
+			display: none;
+		}
+		.btn-pickamount {
+			width: 125px;
+			height: 125px;
+		}
+		.btn-pickcards {
+			width: 175px;
+			flex-direction: column;
+		}
+		.btn-pickcards p {
+			font-size: 1.7rem;
+		}
+		.scene {
+			width: 125px;
+			height: 125px;
+		}
+		.playerscorecard {
+			font-size: 1.5rem;
+		}
+		.resetbutton,
+		.playbutton,
+		.settingsbutton,
+		.backbutton,
+		.hamburgerbutton,
+		.closebutton,
+		.backbuttonthemepage {
+			width: 75px;
+			height: 75px;
+		}
+		.themebutton .btn-pickcards-img {
+			max-width: 75%;
+		}
+}
